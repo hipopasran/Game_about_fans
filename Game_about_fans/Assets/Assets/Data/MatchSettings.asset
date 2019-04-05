@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7817912bbe9a6074882468d3094e40c1, type: 3}
+  m_Name: MatchSettings
+  m_EditorClassIdentifier: 
+  Character: {fileID: 11400000, guid: d55f676d03ae2a74cafad8272948c8eb, type: 2}
+  Settings: {fileID: 11400000, guid: b592f756f0f3d2447a6bc301280bd281, type: 2}
+  Progress: {fileID: 11400000, guid: 45937383f44e43743af0c25713466ec3, type: 2}
+  ShopCharaters: []
