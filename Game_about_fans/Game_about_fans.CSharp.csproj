@@ -235,15 +235,18 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
-    <Reference Include="TextMeshPro-2017.3-Runtime">
-      <HintPath>Assets\TextMesh Pro\Plugins\Editor DLL\TextMeshPro-2017.3-Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="TextMeshPro-2017.3-Editor">
       <HintPath>Assets\TextMesh Pro\Plugins\Editor DLL\TextMeshPro-2017.3-Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="TextMeshPro-2017.3-Runtime">
+      <HintPath>Assets\TextMesh Pro\Plugins\Editor DLL\TextMeshPro-2017.3-Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Assets\Scripts\AnimationSprites.cs" />
+    <Compile Include="Assets\Assets\Scripts\Audio\AudioManager.cs" />
+    <Compile Include="Assets\Assets\Scripts\Audio\Sound.cs" />
+    <Compile Include="Assets\Assets\Scripts\Controllers\ButtonsController.cs" />
     <Compile Include="Assets\Assets\Scripts\Controllers\CameraController.cs" />
     <Compile Include="Assets\Assets\Scripts\Data\Character.cs" />
     <Compile Include="Assets\Assets\Scripts\Data\GameBalance.cs" />
@@ -254,6 +257,7 @@
     <Compile Include="Assets\Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Assets\Scripts\GridLocator.cs" />
     <Compile Include="Assets\Assets\Scripts\Loader.cs" />
+    <Compile Include="Assets\Assets\Scripts\SettingsMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />

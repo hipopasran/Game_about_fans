@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: 
   Music: 1
-  Effect: 1
+  Effect: 0
