@@ -4,6 +4,10 @@ using UnityEngine;
 [System.Serializable]
 public class Sound {
 
+    /*
+     * Script for using sounds in AudioManager.
+     */
+
     public string Name;
     public AudioClip Clip;
     public AudioMixerGroup AudioMixerGroup;

@@ -4,6 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class ButtonsController : MonoBehaviour {
 
+    /* 
+     * This is script for buttons in this game.
+     * Every events after click on button you need write here. 
+     */
+
 	public void OnSceneLoadClick(string SceneName)
     {
         SceneManager.LoadScene(SceneName);

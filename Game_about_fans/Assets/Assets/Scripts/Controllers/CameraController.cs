@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
+    /* 
+     * This is script for camera for "Game" scene.
+     * Follow to player and other things you need write here.
+     */
+
     public Transform Player;
 
     [SerializeField]

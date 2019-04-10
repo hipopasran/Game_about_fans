@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour {
 
+    /*
+     * This is manager for all audio in game.
+     * Here you can work with Music & Sounds mixers. 
+     */
+
     public Sound[] sounds;
     public AudioMixerGroup Music;
     public AudioMixerGroup Sound;
