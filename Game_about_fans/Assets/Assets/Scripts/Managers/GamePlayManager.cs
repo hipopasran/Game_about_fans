@@ -12,7 +12,17 @@ public class GamePlayManager : MonoBehaviour {
     public GameObject[] Enemy;
     public MatchSettings MatchSettings;
     public GameBalance GameBalance;
+    public Progress Progress;
 
+    void OnEnable()
+    {
+        EventManager.Hited += HitManager;
+    }
+
+    void OnDisable()
+    {
+        EventManager.Hited -= HitManager;
+    }
 
     public void Awake()
     {
@@ -48,6 +58,14 @@ public class GamePlayManager : MonoBehaviour {
                 enemy.GetComponent<SpriteRenderer>().sprite = MatchSettings.CurrentCharacter.Sprite;
             }
         }
+
+        Player.GetComponent<PlayerManager>().PlayerSpeed = GameBalance.PlayerSpeed;
+    }
+
+    // All hit between anything in Game scene here.
+    private void HitManager(GameObject first, GameObject second)
+    {
+
     }
 
 }

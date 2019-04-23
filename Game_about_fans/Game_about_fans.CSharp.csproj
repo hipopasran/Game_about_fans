@@ -248,15 +248,20 @@
     <Compile Include="Assets\Assets\Scripts\Audio\Sound.cs" />
     <Compile Include="Assets\Assets\Scripts\Controllers\ButtonsController.cs" />
     <Compile Include="Assets\Assets\Scripts\Controllers\CameraController.cs" />
+    <Compile Include="Assets\Assets\Scripts\Controllers\FollowEnemyController.cs" />
     <Compile Include="Assets\Assets\Scripts\Controllers\SettingsController.cs" />
+    <Compile Include="Assets\Assets\Scripts\Controllers\TouchController.cs" />
     <Compile Include="Assets\Assets\Scripts\Data\Character.cs" />
     <Compile Include="Assets\Assets\Scripts\Data\GameBalance.cs" />
     <Compile Include="Assets\Assets\Scripts\Data\GameSettings.cs" />
     <Compile Include="Assets\Assets\Scripts\Data\MatchSettings.cs" />
     <Compile Include="Assets\Assets\Scripts\Data\Progress.cs" />
+    <Compile Include="Assets\Assets\Scripts\Data\ShopSettings.cs" />
     <Compile Include="Assets\Assets\Scripts\DudeControlUnit.cs" />
     <Compile Include="Assets\Assets\Scripts\GridLocator.cs" />
+    <Compile Include="Assets\Assets\Scripts\Managers\EventManager.cs" />
     <Compile Include="Assets\Assets\Scripts\Managers\GamePlayManager.cs" />
+    <Compile Include="Assets\Assets\Scripts\Managers\PlayerManager.cs" />
     <Compile Include="Assets\Assets\Scripts\Managers\SaveLoadManager.cs" />
     <Compile Include="Assets\Assets\Scripts\Managers\ShopManager.cs" />
   </ItemGroup>

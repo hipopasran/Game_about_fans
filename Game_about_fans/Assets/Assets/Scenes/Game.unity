@@ -298,6 +298,7 @@ MonoBehaviour:
   Enemy: []
   MatchSettings: {fileID: 11400000, guid: 842663f5f5513744eb4bc9e3298900df, type: 2}
   GameBalance: {fileID: 11400000, guid: d3065f346dfd7d0468b981d309e2b742, type: 2}
+  Progress: {fileID: 11400000, guid: 45937383f44e43743af0c25713466ec3, type: 2}
 --- !u!4 &142086900
 Transform:
   m_ObjectHideFlags: 0
@@ -944,6 +945,7 @@ GameObject:
   - component: {fileID: 528134526}
   - component: {fileID: 528134525}
   - component: {fileID: 528134524}
+  - component: {fileID: 528134528}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1053,6 +1055,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &528134528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 528134523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12496e706978d37418b42670b0f1e3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerSpeed: 0
 --- !u!1 &602540991
 GameObject:
   m_ObjectHideFlags: 0
