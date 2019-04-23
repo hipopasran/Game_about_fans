@@ -9,6 +9,9 @@ public class MatchSettings : ScriptableObject {
      */
 
     public Character CurrentCharacter;
+    public Character CurrentEnemy;
+    public Character StandartCharacterSkin;
+    public Character StandartEnemySkin;
     public GameSettings Settings;
     public Progress Progress;
     public Character[] ShopCharaters;

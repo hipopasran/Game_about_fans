@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7817912bbe9a6074882468d3094e40c1, type: 3}
   m_Name: MatchSettings
   m_EditorClassIdentifier: 
-  Character: {fileID: 11400000, guid: d55f676d03ae2a74cafad8272948c8eb, type: 2}
+  CurrentCharacter: {fileID: 11400000, guid: d55f676d03ae2a74cafad8272948c8eb, type: 2}
+  CurrentEnemy: {fileID: 11400000, guid: 0a2119dbcfb5b504d818a61d55b76242, type: 2}
   Settings: {fileID: 11400000, guid: b592f756f0f3d2447a6bc301280bd281, type: 2}
   Progress: {fileID: 11400000, guid: 45937383f44e43743af0c25713466ec3, type: 2}
   ShopCharaters: []
