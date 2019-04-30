@@ -13,3 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerSpeed: 5
   EnemySpeed: 4
+  BulletSpeed: 7
+  StoppingDistance: 20
+  RetreatDistance: 10
+  TimeBtwShots: 10

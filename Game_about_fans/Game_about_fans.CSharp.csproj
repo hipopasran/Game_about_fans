@@ -246,12 +246,15 @@
     <Compile Include="Assets\Assets\Scripts\AnimationSprites.cs" />
     <Compile Include="Assets\Assets\Scripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\Assets\Scripts\Audio\Sound.cs" />
+    <Compile Include="Assets\Assets\Scripts\Controllers\BulletController.cs" />
     <Compile Include="Assets\Assets\Scripts\Controllers\ButtonsController.cs" />
     <Compile Include="Assets\Assets\Scripts\Controllers\CameraController.cs" />
     <Compile Include="Assets\Assets\Scripts\Controllers\FollowEnemyController.cs" />
     <Compile Include="Assets\Assets\Scripts\Controllers\SettingsController.cs" />
+    <Compile Include="Assets\Assets\Scripts\Controllers\ShootEnemyController.cs" />
     <Compile Include="Assets\Assets\Scripts\Controllers\TouchController.cs" />
     <Compile Include="Assets\Assets\Scripts\Data\Character.cs" />
+    <Compile Include="Assets\Assets\Scripts\Data\EnemyPackage.cs" />
     <Compile Include="Assets\Assets\Scripts\Data\GameBalance.cs" />
     <Compile Include="Assets\Assets\Scripts\Data\GameSettings.cs" />
     <Compile Include="Assets\Assets\Scripts\Data\MatchSettings.cs" />

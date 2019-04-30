@@ -8,10 +8,13 @@ public class FollowEnemyController : MonoBehaviour {
      *  Simple enemy. Only follow to player. 
      */
 
-    public Transform PlayerOrTarget;
+    public GameObject Target;
     public float EnemySpeed;
 
     private Rigidbody2D enemyBody;
+    private Vector2 moveVelocity;
+
+    // Event manager for collision
     private EventManager eventManager;
 
     void Awake()
@@ -19,10 +22,17 @@ public class FollowEnemyController : MonoBehaviour {
         Init();
     }
 
+    // Use for calculate direction to player
+    void Update()
+    {
+        Vector2 direction = ((Vector2)Target.transform.position - enemyBody.position);
+        moveVelocity = direction.normalized * EnemySpeed;
+    }
+
+    // Movement
     void FixedUpdate()
     {
-        Vector2 direction = ((Vector2)PlayerOrTarget.position - enemyBody.position).normalized;
-        enemyBody.velocity = new Vector3(direction.x, direction.y, 0) * EnemySpeed;
+        enemyBody.MovePosition(enemyBody.position + moveVelocity * Time.deltaTime);
     }
 
     // Initialization parameters of Enemy.
