@@ -170,8 +170,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Best Score
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c879c59dd52b0e64ab6aea1f02b6ffee, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: c879c59dd52b0e64ab6aea1f02b6ffee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 68478068184106242a664b35b245d52a, type: 2}
+  m_sharedMaterial: {fileID: 21088152950888158, guid: 68478068184106242a664b35b245d52a,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -213,7 +214,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -233,7 +234,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -56.826286, y: 0, z: -56.826237, w: 0}
   m_textInfo:
     textComponent: {fileID: 117218460}
     characterCount: 10
@@ -517,8 +518,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Score
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c879c59dd52b0e64ab6aea1f02b6ffee, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: c879c59dd52b0e64ab6aea1f02b6ffee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 68478068184106242a664b35b245d52a, type: 2}
+  m_sharedMaterial: {fileID: 21088152950888158, guid: 68478068184106242a664b35b245d52a,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -560,7 +562,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -904,8 +906,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 12345
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c879c59dd52b0e64ab6aea1f02b6ffee, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: c879c59dd52b0e64ab6aea1f02b6ffee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 68478068184106242a664b35b245d52a, type: 2}
+  m_sharedMaterial: {fileID: 21088152950888158, guid: 68478068184106242a664b35b245d52a,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -947,7 +950,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1276,10 +1279,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: <-----Here will be picture of stadium----->
+  m_text: <---Here will be picture of stadium--->
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 68478068184106242a664b35b245d52a, type: 2}
+  m_sharedMaterial: {fileID: 21088152950888158, guid: 68478068184106242a664b35b245d52a,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1303,8 +1307,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1341,10 +1345,10 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -210.47418, y: 0, z: -235.1242, w: 0}
+  m_margin: {x: -294.85254, y: 0, z: -286.78436, w: 0}
   m_textInfo:
     textComponent: {fileID: 832250681}
-    characterCount: 43
+    characterCount: 39
     spriteCount: 0
     spaceCount: 5
     wordCount: 7
@@ -1432,8 +1436,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 12345
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c879c59dd52b0e64ab6aea1f02b6ffee, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: c879c59dd52b0e64ab6aea1f02b6ffee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 68478068184106242a664b35b245d52a, type: 2}
+  m_sharedMaterial: {fileID: 21088152950888158, guid: 68478068184106242a664b35b245d52a,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1475,7 +1480,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1586,8 +1591,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: This is stadion table
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 68478068184106242a664b35b245d52a, type: 2}
+  m_sharedMaterial: {fileID: 21088152950888158, guid: 68478068184106242a664b35b245d52a,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1611,14 +1617,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 257
+  m_textAlignment: 514
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1649,7 +1655,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -60.677273, y: 0, z: -64.46947, w: 0}
+  m_margin: {x: -107.17151, y: 0, z: -152.29185, w: 0}
   m_textInfo:
     textComponent: {fileID: 1468995823}
     characterCount: 21
@@ -2011,8 +2017,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Home
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c879c59dd52b0e64ab6aea1f02b6ffee, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: c879c59dd52b0e64ab6aea1f02b6ffee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 68478068184106242a664b35b245d52a, type: 2}
+  m_sharedMaterial: {fileID: 21088152950888158, guid: 68478068184106242a664b35b245d52a,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2054,7 +2061,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -2165,8 +2172,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Statistics
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c879c59dd52b0e64ab6aea1f02b6ffee, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: c879c59dd52b0e64ab6aea1f02b6ffee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 68478068184106242a664b35b245d52a, type: 2}
+  m_sharedMaterial: {fileID: 21088152950888158, guid: 68478068184106242a664b35b245d52a,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2208,7 +2216,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -2228,7 +2236,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -70.447235, y: 0, z: -70.49805, w: 0}
   m_textInfo:
     textComponent: {fileID: 1953806372}
     characterCount: 10
@@ -2319,8 +2327,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Share
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c879c59dd52b0e64ab6aea1f02b6ffee, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: c879c59dd52b0e64ab6aea1f02b6ffee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 68478068184106242a664b35b245d52a, type: 2}
+  m_sharedMaterial: {fileID: 21088152950888158, guid: 68478068184106242a664b35b245d52a,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2362,7 +2371,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -2449,8 +2458,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 8.6, y: 0}
+  m_SizeDelta: {x: 17.2, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2037745494
 MonoBehaviour:
@@ -2473,8 +2482,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Restart
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c879c59dd52b0e64ab6aea1f02b6ffee, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: c879c59dd52b0e64ab6aea1f02b6ffee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 68478068184106242a664b35b245d52a, type: 2}
+  m_sharedMaterial: {fileID: 21088152950888158, guid: 68478068184106242a664b35b245d52a,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2516,7 +2526,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -2536,7 +2546,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -29.274157, y: 0, z: -29.582878, w: 0}
   m_textInfo:
     textComponent: {fileID: 2037745494}
     characterCount: 7

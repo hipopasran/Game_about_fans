@@ -262,11 +262,13 @@
     <Compile Include="Assets\Assets\Scripts\Data\ShopSettings.cs" />
     <Compile Include="Assets\Assets\Scripts\DudeControlUnit.cs" />
     <Compile Include="Assets\Assets\Scripts\GridLocator.cs" />
+    <Compile Include="Assets\Assets\Scripts\Managers\EnemySpawnManager.cs" />
     <Compile Include="Assets\Assets\Scripts\Managers\EventManager.cs" />
     <Compile Include="Assets\Assets\Scripts\Managers\GamePlayManager.cs" />
     <Compile Include="Assets\Assets\Scripts\Managers\PlayerManager.cs" />
     <Compile Include="Assets\Assets\Scripts\Managers\SaveLoadManager.cs" />
     <Compile Include="Assets\Assets\Scripts\Managers\ShopManager.cs" />
+    <Compile Include="Assets\Explosion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />

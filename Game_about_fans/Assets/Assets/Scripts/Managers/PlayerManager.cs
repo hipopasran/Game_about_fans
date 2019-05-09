@@ -12,14 +12,15 @@ public class PlayerManager : MonoBehaviour {
 
     private TouchController touchController;
     private Rigidbody2D playerBody;
-    private Vector2 moveVelocity;
+    private Vector2 moveDirection;
 
     // Event manager for collision
     private EventManager eventManager;
 
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 
         playerBody = this.GetComponent<Rigidbody2D>();
         touchController = new TouchController();
@@ -30,16 +31,15 @@ public class PlayerManager : MonoBehaviour {
     void Update()
     {
         touchController.TouchControll();
-        moveVelocity = touchController.Direction.normalized * PlayerSpeed;
+        moveDirection = touchController.Direction.normalized;
+        
     }
 
 	// Update player position
-	void FixedUpdate () {
-
-        //touchController.TouchControll();
-        //playerBody.velocity = touchController.Direction.normalized * PlayerSpeed;
-        playerBody.MovePosition(playerBody.position + moveVelocity * Time.deltaTime);
-	}
+	void FixedUpdate ()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, transform.position + (Vector3)moveDirection, PlayerSpeed * Time.deltaTime);
+    }
 
     void OnCollisionEnter2D(Collision2D other)
     {

@@ -8,20 +8,29 @@ public class ShootEnemyController : MonoBehaviour {
      *  Enemi which follow but keeps distance and shoot.
      */
 
-    public float Speed;
-    public float StoppingDistance;
-    public float RetreatDistance;
-    public float BulletSpeed;
-    public float TimeBtwShots;
+    public float Speed;                 //  Speed of this enemy
+    public float StoppingDistance;      //  Distance between enemy and player for stop
+    public float RetreatDistance;       //  Distance between enemy and player for retreat
+    public float BulletSpeed;           //  Speed of the bullet
+    public float TimeBtwShots;          //  Time between shots
 
-    public GameObject Bullet;
-    public GameObject Target;
+    public int PlayerLayer;             //  Layer for bullet explosions
+    public int EnemiesLayer;            //  Layer for bullet explosion
 
+    public GameObject Bullet;           //  Bullet prefab
+    public GameObject Target;           //  Player
 
-    private float timeForShots;
+    private float timeForShots;         //  Value for timer between shot
 
-    // Event manager for collision
-    private EventManager eventManager;
+    // state status
+    private bool isFollowing;
+    private bool isRetreating;
+    private bool isStopping;
+    private bool isShooting; 
+
+    private BulletController bullet;    //  Variable for buller params init
+
+    private EventManager eventManager;  //  Event manager for collision
 
 
     void Awake()
@@ -36,21 +45,27 @@ public class ShootEnemyController : MonoBehaviour {
 
         if(DistanceBetween > StoppingDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, Target.transform.position, Speed * Time.deltaTime);
+            isStopping = false;
+            isRetreating = false;
+            isFollowing = true;
+            
         }
         else if(DistanceBetween < StoppingDistance && DistanceBetween > RetreatDistance)
         {
-            transform.position = this.transform.position;
+            isFollowing = false;
+            isRetreating = false;
+            isStopping = true;
         }
         else if(DistanceBetween < RetreatDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, Target.transform.position, -Speed * Time.deltaTime);
+            isStopping = false;
+            isFollowing = false;
+            isRetreating = true;
         }
 
         if(timeForShots <=0)
         {
-            Instantiate(Bullet, transform.position, Quaternion.identity);
-            timeForShots = TimeBtwShots;
+            isShooting = true;
         }
         else
         {
@@ -59,18 +74,87 @@ public class ShootEnemyController : MonoBehaviour {
         
     }
 
+    // /using for Movement and Shooting
+    void FixedUpdate()
+    {
+        Move();
+        Shoot();
+    }
+
     // Initialization parameters of Enemy
     private void Init()
     {
         eventManager = new EventManager();
-        //мб переделать
-        Bullet.GetComponent<BulletController>().Target = Target;
-        Bullet.GetComponent<BulletController>().Speed = BulletSpeed;
+
+        //  Bullet params init
+        bullet = Bullet.GetComponent<BulletController>();
+
+        bullet.Target = Target;
+        bullet.Speed = BulletSpeed;
+        bullet.PlayerLayer = PlayerLayer;
+        bullet.EnemiesLayer = EnemiesLayer;
+
+    }
+
+    //  Moving
+    private void Move()
+    {
+        if(isFollowing)
+        {
+            Follow();
+        }
+        else if(isRetreating)
+        {
+            Retreat();
+        }
+        else if(isStopping)
+        {
+            Stop();
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    //  Following
+    private void Follow()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, Target.transform.position, Speed * Time.deltaTime);
+    }
+
+    //  Retreating
+    private void Retreat()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, Target.transform.position, -Speed * Time.deltaTime);
+    }
+
+    //  Stopping
+    private void Stop()
+    {
+        transform.position = this.transform.position;
+    }
+
+    //  Shooting
+    private void Shoot()
+    {
+        if (isShooting)
+        {
+            isShooting = false;
+            Instantiate(Bullet, transform.position, Quaternion.identity);
+            timeForShots = TimeBtwShots;
+        }
+        else
+        {
+            return;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
         eventManager.OnHited(this.gameObject, other.gameObject);
     }
+
+
 
 }

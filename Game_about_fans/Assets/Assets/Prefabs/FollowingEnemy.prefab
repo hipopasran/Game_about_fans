@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61716804343918338}
   - component: {fileID: 50116989135461964}
   - component: {fileID: 114606116146576178}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FollowingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  EnemySpeed: 4
+  Speed: 4
 --- !u!212 &212799460809716088
 SpriteRenderer:
   m_ObjectHideFlags: 1

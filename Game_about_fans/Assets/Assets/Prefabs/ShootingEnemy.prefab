@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61380896845035526}
   - component: {fileID: 50346294223673298}
   - component: {fileID: 114649348068580358}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShootingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -100,11 +100,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 4
-  StoppingDistance: 20
-  RetreatDistance: 10
+  StoppingDistance: 13
+  RetreatDistance: 7
   BulletSpeed: 7
-  TimeBtwShots: 10
-  Bullet: {fileID: 1177903694899368, guid: d253bf7d99c0fcf479134e9c6a3288f6, type: 2}
+  TimeBtwShots: 7
+  PlayerLayer: 8
+  EnemiesLayer: 9
+  Bullet: {fileID: 1456152974139672, guid: d253bf7d99c0fcf479134e9c6a3288f6, type: 2}
   Target: {fileID: 0}
 --- !u!212 &212019868783359466
 SpriteRenderer:

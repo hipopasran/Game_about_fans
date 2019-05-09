@@ -13,7 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerSpeed: 5
   EnemySpeed: 4
+  TimeBTWEnemies: 7
+  StoppingDistance: 13
+  RetreatDistance: 7
+  TimeBtwShots: 7
+  PlayerLayer: 8
+  EnemiesLayer: 9
   BulletSpeed: 7
-  StoppingDistance: 20
-  RetreatDistance: 10
-  TimeBtwShots: 10
+  ExplosionRadius: 10
+  ExplosionForce: 7
+  RadiusNearTarget: 10

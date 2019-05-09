@@ -12,6 +12,7 @@ public class GamePlayManager : MonoBehaviour {
     [Header("Player")]
     public GameObject Player;
     [Header("Enemies")]
+    public GameObject[] Enemies;
     public GameObject FollowingEnemy;
     public GameObject ShootingEnemy;
     [Header("Data")]
@@ -19,13 +20,21 @@ public class GamePlayManager : MonoBehaviour {
     public GameBalance GameBalance;
     public Progress Progress;
 
+
+    public GameObject SpawnManager;
+
     //  Variables to initialize player and enemy parameters via script
     private PlayerManager player;
-    private FollowEnemyController enemy1;
-    private ShootEnemyController enemy2;
+    private EnemySpawnManager spawnManagerSettings;
+  //  private FollowEnemyController enemy1;
+  //  private ShootEnemyController enemy2;
 
     //  Parameters for collision handling, copy tracking
     private Dictionary<Vector3, Vector3> listOfCollisions;
+
+    // For Start animation
+    private Animator anim;
+
 
     void OnEnable()
     {
@@ -40,6 +49,7 @@ public class GamePlayManager : MonoBehaviour {
     public void Awake()
     {
         Init();
+        anim.Play("StartGame");
     }
 
 
@@ -54,18 +64,21 @@ public class GamePlayManager : MonoBehaviour {
         player.PlayerSpeed = GameBalance.PlayerSpeed;
 
         //  Init Following enemy params
-        enemy1 = FollowingEnemy.GetComponent<FollowEnemyController>();
+        var enemy1 = Enemies[0].GetComponent<FollowEnemyController>();
         enemy1.Target = Player;
-        enemy1.EnemySpeed = GameBalance.EnemySpeed;
+        enemy1.Speed = GameBalance.EnemySpeed;
 
         //  Init Shooting Enemy params
-        enemy2 = ShootingEnemy.GetComponent<ShootEnemyController>();
+        var enemy2 = Enemies[1].GetComponent<ShootEnemyController>();
         enemy2.Target = Player;
         enemy2.Speed = GameBalance.EnemySpeed;
         enemy2.StoppingDistance = GameBalance.StoppingDistance;
         enemy2.TimeBtwShots = GameBalance.TimeBtwShots;
         enemy2.RetreatDistance = GameBalance.RetreatDistance;
         enemy2.BulletSpeed = GameBalance.BulletSpeed;
+        enemy2.PlayerLayer = GameBalance.PlayerLayer;
+        enemy2.EnemiesLayer = GameBalance.EnemiesLayer;
+        
 
         // Init Charecter skin
         if (MatchSettings.CurrentCharacter != null)
@@ -80,14 +93,29 @@ public class GamePlayManager : MonoBehaviour {
         // Init Enemies skins
         if (MatchSettings.CurrentEnemyPackage != null)
         {
-            FollowingEnemy.GetComponent<SpriteRenderer>().sprite = MatchSettings.CurrentEnemyPackage.FollwingEnemy.Sprite;
-            ShootingEnemy.GetComponent<SpriteRenderer>().sprite = MatchSettings.CurrentEnemyPackage.ShootingEnemy.Sprite;
+            Enemies[0].GetComponent<SpriteRenderer>().sprite = MatchSettings.CurrentEnemyPackage.FollwingEnemy.Sprite;
+            Enemies[1].GetComponent<SpriteRenderer>().sprite = MatchSettings.CurrentEnemyPackage.ShootingEnemy.Sprite;
         }
         else
         {
-            FollowingEnemy.GetComponent<SpriteRenderer>().sprite = MatchSettings.StandartEnemyPackage.FollwingEnemy.Sprite;
-            ShootingEnemy.GetComponent<SpriteRenderer>().sprite = MatchSettings.StandartEnemyPackage.ShootingEnemy.Sprite;
+            Enemies[0].GetComponent<SpriteRenderer>().sprite = MatchSettings.StandartEnemyPackage.FollwingEnemy.Sprite;
+            Enemies[1].GetComponent<SpriteRenderer>().sprite = MatchSettings.StandartEnemyPackage.ShootingEnemy.Sprite;
         }
+
+        //  Init Scene Animator
+        anim = GetComponent<Animator>();
+
+        //  Init Enemies spawn manager
+        spawnManagerSettings = SpawnManager.GetComponent<EnemySpawnManager>();
+        spawnManagerSettings.Player = Player;
+        spawnManagerSettings.TimeBTWEnemy = GameBalance.TimeBTWEnemies;
+        spawnManagerSettings.EnemiesType = new GameObject[Enemies.Length];
+        for(int i = 0; i < Enemies.Length; i++)
+        {
+            spawnManagerSettings.EnemiesType[i] = Enemies[i];
+        }
+        
+
 
     }
 
@@ -135,9 +163,16 @@ public class GamePlayManager : MonoBehaviour {
                 }
                 else if(second.tag == "Enemy")
                 {
-                    Destroy(first);
-                    Destroy(second);
-                    Instantiate(MatchSettings.Coin, centerOfCollision, Quaternion.identity);
+                    if (first.transform.parent != second.transform && second.transform.parent != first.transform)
+                    {
+                        Destroy(first);
+                        Destroy(second);
+                        Instantiate(MatchSettings.Coin, centerOfCollision, Quaternion.identity);
+                    }
+                    else
+                    {
+                        return;
+                    }
                 }
                 else
                 {
@@ -166,6 +201,13 @@ public class GamePlayManager : MonoBehaviour {
                 return;
             }
         }
+    }
+
+    private void StartGame()
+    {
+        Debug.Log("Stop");
+        anim.enabled = false;
+        spawnManagerSettings.IsStartGame = true;
     }
 
     private void GameOver()
