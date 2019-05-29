@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,33 +9,40 @@ public class GamePlayManager : MonoBehaviour {
     /*
      *  All Gameplay here. Also initialization of map. 
      */
-    
+    #region Public Variables
+
     [Header("Player")]
     public GameObject Player;
     [Header("Enemies")]
     public GameObject[] Enemies;
-    public GameObject FollowingEnemy;
-    public GameObject ShootingEnemy;
     [Header("Data")]
     public MatchSettings MatchSettings;
     public GameBalance GameBalance;
     public Progress Progress;
+    [Header("UI")]
+    public TextMeshProUGUI ScoreText;
+    public TextMeshProUGUI CoinsText;
 
 
     public GameObject SpawnManager;
+    #endregion
+
+    #region Private variables
+
+    private float score;
+
+    public bool IsGameStarted;
 
     //  Variables to initialize player and enemy parameters via script
     private PlayerManager player;
     private EnemySpawnManager spawnManagerSettings;
-  //  private FollowEnemyController enemy1;
-  //  private ShootEnemyController enemy2;
 
     //  Parameters for collision handling, copy tracking
     private Dictionary<Vector3, Vector3> listOfCollisions;
 
     // For Start animation
     private Animator anim;
-
+    #endregion
 
     void OnEnable()
     {
@@ -46,16 +54,34 @@ public class GamePlayManager : MonoBehaviour {
         EventManager.Hited -= HitManager;
     }
 
-    public void Awake()
+    void Awake()
     {
         Init();
         anim.Play("StartGame");
+    }
+
+    void FixedUpdate()
+    {
+        //_scoreTimer += 1 * (Time.deltaTime * 8);
+        if (IsGameStarted)
+        {
+            score += 1 * Time.deltaTime;
+            ScoreText.text = (int)score + " m";
+        }
     }
 
 
     // Initialization skins of characters and enemies
     private void Init()
     {
+        Time.timeScale = 1.0f;
+
+        //  Init UI parameters
+        score = 0;
+        ScoreText.text = score.ToString() + " M";
+        CoinsText.text = Progress.Cash.ToString();
+        IsGameStarted = false;
+
         //  Init Parameters for collisions handling
         listOfCollisions = new Dictionary<Vector3, Vector3>();
 
@@ -145,6 +171,7 @@ public class GamePlayManager : MonoBehaviour {
                 {
                     Destroy(second);
                     Progress.Cash++;
+                    CoinsText.text = Progress.Cash.ToString();
                 }
                 else
                 {
@@ -160,6 +187,8 @@ public class GamePlayManager : MonoBehaviour {
                 else if(second.tag == "Coin")
                 {
                     Destroy(second);
+                    Progress.Cash++;
+                    CoinsText.text = Progress.Cash.ToString();
                 }
                 else if(second.tag == "Enemy")
                 {
@@ -207,11 +236,22 @@ public class GamePlayManager : MonoBehaviour {
     {
         Debug.Log("Stop");
         anim.enabled = false;
-        spawnManagerSettings.IsStartGame = true;
+        IsGameStarted = true;
+        spawnManagerSettings.IsStartGame = IsGameStarted;
     }
 
     private void GameOver()
     {
+        //  Save score
+        Progress.LastScore = (int)score;
+
+        //  Update Best Score
+        if(Progress.LastScore > Progress.BestScore)
+        {
+            Progress.BestScore = Progress.LastScore;
+        }
+
+        //  Load GameOver Scene
         SceneManager.LoadScene("GameOver");
     }
 

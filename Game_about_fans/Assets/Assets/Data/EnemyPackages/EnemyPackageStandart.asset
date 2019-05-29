@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: EnemyPackageStandart
   m_EditorClassIdentifier: 
   FollwingEnemy: {fileID: 11400000, guid: 0a2119dbcfb5b504d818a61d55b76242, type: 2}
-  ShootingEnemy: {fileID: 11400000, guid: 0a2119dbcfb5b504d818a61d55b76242, type: 2}
+  ShootingEnemy: {fileID: 11400000, guid: e16c1cf7b646ee9488ce63cf89d46291, type: 2}

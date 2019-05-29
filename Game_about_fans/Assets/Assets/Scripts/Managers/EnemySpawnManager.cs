@@ -32,10 +32,7 @@ public class EnemySpawnManager : MonoBehaviour {
             timeLeft -= Time.deltaTime;
             if (timeLeft <= 0)
             {
-                for (int i = 0; i < 2; i++)
-                {
-                    SpawnEnemy();
-                }
+                SpawnEnemy();
                 timeLeft = TimeBTWEnemy;
             }
         }
@@ -43,24 +40,47 @@ public class EnemySpawnManager : MonoBehaviour {
 
     private void SpawnEnemy()
     {
-        if(Player.transform.position.y >= 0)
+
+        // Take current spawns 
+        var arrayOfSpawns = ChooseSide();
+
+        // Make new array for random choise
+        Transform[] spawns = new Transform[arrayOfSpawns.Length];
+        for (int i = 0; i < spawns.Length; i++)
         {
-            Choose(UpSpawns);
+            spawns[i] = arrayOfSpawns[i];
         }
-        else if(Player.transform.position.y < 0)
+
+        // Choice
+        for (int i = 0; i < 2; i++)
         {
-            Choose(DownSpawns);
-        }
-        else
-        {
-            return;
+            // Choose unic spawn point
+            int randomPoint = Random.Range(0, spawns.Length - i);
+            var spawnPoint = spawns[randomPoint];
+            spawns[randomPoint] = spawns[spawns.Length - 1 - i];
+
+            // Choose enemy
+            var enemy = EnemiesType[Random.Range(0, EnemiesType.Length)];
+
+            // Spawn
+            Instantiate(enemy, new Vector3(spawnPoint.position.x, spawnPoint.position.y), Quaternion.identity);
         }
     }
 
-    private void Choose(Transform[] spawns)
+    private Transform[] ChooseSide()
     {
-        var spawnPoint = spawns[Random.Range(0, spawns.Length)];
-        var enemy = EnemiesType[Random.Range(0, EnemiesType.Length)];
-        Instantiate(enemy, new Vector3(spawnPoint.position.x, spawnPoint.position.y), Quaternion.identity);
+        if (Player.transform.position.y >= 0)
+        {
+            return UpSpawns;
+        }
+        else if (Player.transform.position.y < 0)
+        {
+            return DownSpawns;
+        }
+        else
+        {
+            return new Transform[] {};
+        }
+
     }
 }

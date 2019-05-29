@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d55db6ab2d3f454d8f3c9c2fa1bf7fd, type: 3}
   m_Name: Progress
   m_EditorClassIdentifier: 
-  Cash: 0
-  Score: 0
-  BestScore: 0
+  Cash: 10
+  LastScore: 8
+  BestScore: 255

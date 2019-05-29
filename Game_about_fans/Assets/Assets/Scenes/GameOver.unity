@@ -279,6 +279,7 @@ GameObject:
   - component: {fileID: 263910724}
   - component: {fileID: 263910726}
   - component: {fileID: 263910725}
+  - component: {fileID: 263910727}
   m_Layer: 5
   m_Name: ScorePanel
   m_TagString: Untagged
@@ -339,6 +340,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 263910723}
+--- !u!114 &263910727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 263910723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aba7a79262ff004b97277d470c55c3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LastScoreText: {fileID: 1407640632}
+  BestScoreText: {fileID: 582420593}
+  Progress: {fileID: 11400000, guid: 45937383f44e43743af0c25713466ec3, type: 2}
 --- !u!1 &276484565
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,7 +487,7 @@ GameObject:
   - component: {fileID: 366244841}
   - component: {fileID: 366244840}
   m_Layer: 5
-  m_Name: Score
+  m_Name: LastScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

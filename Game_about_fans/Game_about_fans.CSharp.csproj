@@ -267,6 +267,7 @@
     <Compile Include="Assets\Assets\Scripts\Managers\GamePlayManager.cs" />
     <Compile Include="Assets\Assets\Scripts\Managers\PlayerManager.cs" />
     <Compile Include="Assets\Assets\Scripts\Managers\SaveLoadManager.cs" />
+    <Compile Include="Assets\Assets\Scripts\Managers\ScoreboardValueManager.cs" />
     <Compile Include="Assets\Assets\Scripts\Managers\ShopManager.cs" />
     <Compile Include="Assets\Explosion.cs" />
   </ItemGroup>

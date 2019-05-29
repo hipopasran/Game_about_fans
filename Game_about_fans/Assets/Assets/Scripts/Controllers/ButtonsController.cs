@@ -11,6 +11,10 @@ public class ButtonsController : MonoBehaviour {
 
 	public void OnSceneLoadClick(string SceneName)
     {
+        if(Time.timeScale < 1.0f)
+        {
+            Time.timeScale = 1.0f;
+        }
         SceneManager.LoadScene(SceneName);
     }
 
